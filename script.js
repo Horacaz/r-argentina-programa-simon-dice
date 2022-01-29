@@ -3,9 +3,10 @@ const $rondaActual = document.querySelector("#ronda-actual");
 const $turnoActual = document.querySelector("#turno-actual");
 let secuenciaCpu = [];
 let rondaActual = 1
+
 $comenzar.onclick = function () {
-rondaActual = 1
-secuenciaCpu = []
+secuenciaCpu = [];
+rondaActual = 1;
  ronda(rondaActual);
     
 }
@@ -16,11 +17,9 @@ function ronda(rondaActual){
     desabilitarBotones();
     secuenciaCpu.push(turnoCpu());
     repetirSecuencia(secuenciaCpu);
-    const secuenciaJugador = [];
+    let secuenciaJugador = [];
     let retraso = (rondaActual + 2) * 1000;
     turnoJugador(secuenciaCpu, secuenciaJugador, retraso);
-
-
 }
 
 
@@ -46,20 +45,22 @@ function turnoJugador(secuenciaCpu, secuenciaJugador, retraso){
 
         boton.onclick = function(e){ 
             secuenciaJugador.push(e.target.className);
-            for(i = 0; i < secuenciaJugador.length; i++){
+            for(let i = 0; i < secuenciaJugador.length; i++){
                 if (secuenciaJugador[i] !== secuenciaCpu[i]){
                     desabilitarBotones();
-                    return $turnoActual.textContent = " Perdiste, pulsa comenzar para jugar nuevamente.";
-                } if (secuenciaJugador.length === secuenciaCpu.length){
-                    rondaActual++;
-                    return setTimeout(ronda(rondaActual), 500);
-                    ;
-                    
-                }
+                    return $turnoActual.textContent = " Perdiste, pulsa comenzar para jugar nuevamente."; 
+                }else continue
+            
+            }
+            if (secuenciaJugador.length === secuenciaCpu.length){
+                rondaActual++
+                return setTimeout(ronda(rondaActual), 500);
             }
         }
+       
     })
 }
+
 
 function turnoCpu() {
     let cpuPlay = Math.floor(Math.random() * 4);
