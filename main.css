@@ -1,0 +1,50 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+header{
+    text-align: center;
+}
+
+main{
+    text-align: center;
+}
+.main-container button {
+    width: 200px;
+    height: 100px;
+    margin: 2px;
+    border-radius: 12px;
+}
+.comenzar{
+    margin: 12px;
+
+}
+
+#highlight {
+    transform: scale(1.1);
+    transition-duration: 500ms; 
+}
+
+#unhighlight{
+
+        transform: scale(1.0);
+        transition-duration: 500ms; 
+    }
+
+.boton-verde {
+    background-color: green;
+
+}
+
+.boton-rojo {
+    background-color: red;
+}
+
+.boton-azul {
+    background-color: blue;
+}
+
+.boton-amarillo {
+    background-color: yellow;
+}
