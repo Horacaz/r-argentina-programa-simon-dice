@@ -1,9 +1,11 @@
 const $comenzar = document.querySelector(".comenzar");
 const $rondaActual = document.querySelector("#ronda-actual");
 const $turnoActual = document.querySelector("#turno-actual");
-const secuenciaCpu = [];
+let secuenciaCpu = [];
 let rondaActual = 1
 $comenzar.onclick = function () {
+rondaActual = 1
+secuenciaCpu = []
  ronda(rondaActual);
     
 }
